@@ -1,0 +1,35 @@
+
+Scenario 1: Claim Submission (Routine / Neutral — Logs to Sheets Only)
+
+• Subject: Claim Update - New Accident Claim Documents
+• Body:Hello Team,My name is Priya Kulkarni, and I would like to submit a new motor insurance claim under policy POL-88341. My vehicle sustained minor bumper damage yesterday, and I have the repair estimate and photos ready to share. Please generate my claim reference and let me know the next steps.Regards,
+Priya Kulkarni
+• Expected Output:
+	• Intent: Claim_Submission | Sentiment: Neutral | Policy_Number: POL-88341 | Claim_ID: N/A | Customer_Name: Priya Kulkarni
+	• Slack Alert: None (no false alarm)
+
+
+-------------------------------------------------------------------------------------- 
+
+
+Scenario 2: Policy Renewal (Positive — Logs to Sheets Only)
+
+• Subject: Policy Inquiry - Annual Health Policy Renewal
+• Body:Hi Support,This is Vikram Deshmukh (Policy Number: POL-55912). I was very happy with the smooth service this past year and want to renew my policy ahead of next month's due date. Could you please send over the updated renewal quote and payment link?Thanks,
+Vikram Deshmukh
+• Expected Output:
+	• Intent: Policy_Renewal | Sentiment: Positive | Policy_Number: POL-55912 | Claim_ID: N/A | Customer_Name: Vikram Deshmukh
+	• Slack Alert: None (no false alarm)
+
+----------------------------------------------------------------------------------- 
+
+
+Scenario 3: Billing Dispute (Urgent Escalation — Triggers Slack 🚨 + Logs to Sheets)
+
+• Subject: Policy Inquiry - Urgent Double Charge on Auto-Debit
+• Body:Urgent attention needed! My name is Rohan Sharma, policy POL-77210, related to existing claim CLM-99482. My bank account was debited twice for the same installment this morning, and nobody on the helpline has resolved it. Refund the duplicate charge immediately or I will escalate this complaint to the insurance ombudsman today!Rohan Sharma
+• Expected Output:
+	• Intent: Billing_Dispute | Sentiment: Urgent_Negative | Policy_Number: POL-77210 | Claim_ID: CLM-99482 | Customer_Name: Rohan Sharma
+	• Slack Alert: YES 🚨 (Posts immediately to #claims-escalations)
+
+-------------------------------------------------------------------------------------- 
